@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Person {
+        constructor(name,address) {
+            this.name = name;
+            this.address = address;
+        }
+        getAddress(){
+            return `I live in ${this.address}`;
+        }
+    }
+    class Name extends Person{
+        constructor(model) {
+            super();
+            this.model = model;
+        }
+    }
+    const test = new Person("Nguyen duc tam","Quang Ninh");
+
+    console.log(test.name,test.address)
+    console.log(test.getAddress())
+</script>
+</body>
+</html>

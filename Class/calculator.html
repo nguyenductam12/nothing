@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+<style>
+    body{
+        font-family: 'Roboto Mono', monospace;
+        justify-content: center;
+        text-align: center;
+    }
+    .header{
+        background-color: #c4e0d0;
+        border-radius: 5px;
+    }
+    .intro-head{
+        padding: 2rem;
+        font-size: 1.5rem;
+    }
+    .line-control{
+        display: flex;
+        justify-content: center;
+        padding: 5px;
+    }
+    .line-control .item{
+        display: flex;
+        font-size: 1.5rem;
+        background-color: #a9afab;
+        margin: 5px 10px;
+        padding: 10px 25px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    input{
+        box-sizing: content-box;
+        width: 21.8rem;
+        height: 3rem;
+        font-size: large;
+        /*display: flex;*/
+    }
+    .num{
+        margin-right: 6rem;
+    }
+    button{
+        text-decoration: none;
+        list-style-type: none;
+        font-size: 1.5rem;
+        background-color: #a9afab;
+        margin: 5px 10px;
+        padding: 10px 25px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .line-nums::after{
+        content: "||";
+        position: relative;
+        font-weight: 900;
+        background-color: #8bbae0;
+        right: 1rem;
+        left: 8.77777rem;
+        top: -8.28rem;
+        padding: 6.5rem 1.677777rem;
+        border-radius: 8px;
+        border: 3px solid black;
+    }
+</style>
+</head>
+    <body>
+        <div class="header container">
+        <div class="intro-head text-center">
+        Máy tính cơ bản
+        <i class="fa-solid fa-calculator"></i>
+        </div>
+        <div class="to-do">
+            <div class="result">
+                <label>
+                <input type="text"/>
+                </label>
+            </div>
+            <div class="line-control text-center">
+
+            </div>
+            <div class="line-nums">
+            </div>
+
+        <div>
+</div>
+<script>
+
+    const renderCl = document.querySelector(".line-control");
+    const renderNums = document.querySelector(".line-nums");
+    const calculator = document.querySelector(".equal");
+    const buttons = document.querySelector(".line-nums");
+    const control =
+        [
+        '<i class="fa-solid fa-plus"></i>',
+        '<i class="fa-solid fa-minus"></i>',
+        '<i class="fa-solid fa-xmark"></i>',
+        '<i class="fa-solid fa-divide"></i>'
+        ];
+    let nums =
+        [7, 8, 9,
+         4, 5, 6,
+         1, 2, 3,
+         0,'.','c'
+        ];
+    const line = 4;
+    function renderControl(){
+        control.map(function (item) {
+             renderCl.innerHTML += `<button type="button" class="item">${item}</button>`
+        });
+    }
+    function renderNum(){
+        for(let i = 0,j = 0 ; i < line ; i++){
+            renderNums.innerHTML +=
+                `<div class="num">
+                    <button id=\`${nums[i*line-j]}\`>${nums[i*line-j]}</button>
+                    <button id=\`${nums[i*line+1-j]}\`>${nums[i*line+1-j]}</button>
+                    <button id=\`${nums[i*line+2-j]}\`>${nums[i*line+2-j]}</button>
+                 </div>`;
+            j++;
+        }
+    }
+    function calculatorF(){
+        for (let argument of buttons.children) {
+            for (let argumentElement of argument.children) {
+             if(argumentElement.id === '1'){
+                    console.log("+")
+             }
+            }
+        }
+
+    }
+    renderNum();
+    renderControl();
+    calculatorF();
+    console.warn("Test")
+</script>
+<script src="https://kit.fontawesome.com/aa794ea0db.js" crossorigin="anonymous"></script>
+</body>
+</html>

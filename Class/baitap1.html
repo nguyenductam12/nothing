@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Novel{
+        constructor(value,title,author) {
+            this.value = value;
+            this.title = title;
+            this.author = author;
+        }
+        getAuthor(){
+            return `${this.value} \n ${this.title} \n ${this.author}`;
+        }
+    }
+    let myAuthor = new Novel(1,"I love you","NdTam");
+    console.log(myAuthor.getAuthor())
+</script>
+</body>
+</html>
